@@ -1,0 +1,1 @@
+Proposal Baru telah dikirim oleh Mahasiswa. Silakan cek http://proposalmhs.feb.ulm.ac.id/masuk

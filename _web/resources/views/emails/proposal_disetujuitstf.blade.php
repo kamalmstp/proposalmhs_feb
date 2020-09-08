@@ -1,0 +1,1 @@
+Proposal yang diajukan mahasiswa disetujui oleh WD 3. {{ $scatatan }} catatan yang diberikan. Silakan cek http://proposalmhs.feb.ulm.ac.id/disetujui

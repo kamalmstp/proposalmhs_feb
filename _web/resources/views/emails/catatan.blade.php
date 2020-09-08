@@ -1,0 +1,1 @@
+Proposal Anda diberi catatan oleh WD3. Silakan cek http://proposalmhs.feb.ulm.ac.id/list

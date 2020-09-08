@@ -1,0 +1,1 @@
+File LPJ sudah di apload mahasiswa. Silakan cek http://proposalmhs.feb.ulm.ac.id/disetujui

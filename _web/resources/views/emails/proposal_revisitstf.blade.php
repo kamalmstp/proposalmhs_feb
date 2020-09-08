@@ -1,0 +1,1 @@
+Proposal yang diajukan mahasiswa diminta WD 3 untuk direvisi. {{ $scatatan }} catatan yang diberikan. Silakan cek http://proposalmhs.feb.ulm.ac.id/revisi
