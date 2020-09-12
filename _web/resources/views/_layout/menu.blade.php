@@ -33,6 +33,38 @@
           </a>
         </li>
         @endrole
+
+        <!-- mulai edit -->
+        <!-- @role(('dekan'))
+        <li class="nav-item {{ request()->is('masuk') ? ' active' : '' }}" data-toggle="tooltip" data-placement="right" >
+          <a class="nav-link" href="{{ route('proposal_masuk') }}" title="Proposal Masuk">
+            <i class="fa fa-fw fa-download"></i>
+            <span class="nav-link-text">Proposal Masuk</span>
+          </a>
+        </li>
+        <li class="nav-item {{ request()->is('disetujui') ? ' active' : '' }}" data-toggle="tooltip" data-placement="right">
+          <a class="nav-link" href="{{ route('proposal_disetujui') }}" title="Proposal Disetujui">
+            <i class="fa fa-fw fa-check-square-o"></i>
+            <span class="nav-link-text">Proposal Disetujui</span>
+          </a>
+        </li>
+        <li class="nav-item {{ request()->is('rekap') ? ' active' : '' }}" data-toggle="tooltip" data-placement="right" >
+          <a class="nav-link" href="{{ route('proposal_rekap') }}" title="Rekap Proposal">
+            <i class="fa fa-fw fa-list-alt"></i>
+            <span class="nav-link-text">Rekap Proposal</span>
+          </a>
+        </li>
+        @endrole
+        @role(('wd2'))
+        <li class="nav-item {{ request()->is('disetujui') ? ' active' : '' }}" data-toggle="tooltip" data-placement="right">
+          <a class="nav-link" href="{{ route('proposal_disetujui') }}" title="Proposal Disetujui">
+            <i class="fa fa-fw fa-check-square-o"></i>
+            <span class="nav-link-text">Proposal Disetujui</span>
+          </a>
+        </li>
+        @endrole -->
+        <!-- end edit -->
+
         @permission(('proposal_masuk'))
         <li class="nav-item {{ request()->is('masuk') ? ' active' : '' }}" data-toggle="tooltip" data-placement="right" >
           <a class="nav-link" href="{{ route('proposal_masuk') }}" title="Proposal Masuk">

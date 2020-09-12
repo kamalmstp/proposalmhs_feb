@@ -78,7 +78,7 @@
     <a class="btn btn-link" href="{{ asset('upload/manual_umum.pdf') }}" title="manual umum">
     @endrole
     @role(('mhs'))
-    <a class="btn btn-link" href="{{ asset('upload/manual_mahasiswa .pdf') }}" title="manual mahasiswa">
+    <a class="btn btn-link" href="{{ asset('upload/manual_mahasiswa.pdf') }}" title="manual mahasiswa">
     @endrole
         Download Panduan User
     </a>

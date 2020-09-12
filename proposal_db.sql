@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2020 at 03:51 AM
+-- Generation Time: Sep 12, 2020 at 05:44 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -77,6 +77,13 @@ CREATE TABLE `pagu` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `pagu`
+--
+
+INSERT INTO `pagu` (`id`, `tahun`, `pagu`, `sisa`, `created_at`, `updated_at`) VALUES
+(1, 2020, '34.000', '34.000', '2020-09-12 03:15:56', '2020-09-12 03:15:56');
+
 -- --------------------------------------------------------
 
 --
@@ -104,6 +111,20 @@ CREATE TABLE `permissions` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `permissions`
+--
+
+INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'proposal_mhs', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(2, 'proposal_masuk', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(3, 'proposal_revisi', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(4, 'proposal_disetujui', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(5, 'proposal_ditolak', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(6, 'status_dana', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(7, 'input_proposal', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57'),
+(8, 'edit_proposal', NULL, NULL, '2020-09-12 03:00:57', '2020-09-12 03:00:57');
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +135,25 @@ CREATE TABLE `permission_role` (
   `permission_id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permission_role`
+--
+
+INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
+(1, 6),
+(2, 2),
+(2, 4),
+(2, 5),
+(3, 4),
+(4, 2),
+(4, 3),
+(4, 4),
+(4, 5),
+(5, 4),
+(6, 3),
+(7, 6),
+(8, 6);
 
 -- --------------------------------------------------------
 
@@ -138,7 +178,7 @@ INSERT INTO `prodi` (`id`, `nama`, `created_at`, `updated_at`) VALUES
 (3, 'S1 Manajemen', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
 (4, 'S1 Akuntansi', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
 (5, 'S1 Ilmu Ekonomi dan Studi Pembangunan', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
-(6, 'S2 manajemen', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
+(6, 'S2 Manajemen', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
 (7, 'S2 Ilmu Ekonomi', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
 (8, 'S2 Akuntansi', '2020-09-07 08:04:45', '2020-09-07 08:04:45'),
 (9, 'Pendidikan Profesi Akuntansi', '2020-09-07 08:04:45', '2020-09-07 08:04:45');
@@ -166,6 +206,13 @@ CREATE TABLE `proposal` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `proposal`
+--
+
+INSERT INTO `proposal` (`id`, `user_id`, `organisasi`, `kegiatan`, `tanggal`, `tempat`, `anggaran_a`, `anggaran_b`, `dana`, `status`, `file`, `lpj`, `created_at`, `updated_at`) VALUES
+(1, 6, 'sdfdg', 'dsgdg', '2020-09-12 09:32:46', 'sthsh', 'shsth', 'shdsh', 'sdhdsh', 'Disetujui', 'agadg', 'agadg', '2020-09-12 01:32:46', '2020-09-12 01:32:46');
+
 -- --------------------------------------------------------
 
 --
@@ -181,6 +228,18 @@ CREATE TABLE `roles` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'Administrator', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20'),
+(2, 'dekan', 'Dekan', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20'),
+(3, 'wd2', 'Wakil Dekan 2', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20'),
+(4, 'wd3', 'Wakil Dekan 3', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20'),
+(5, 'umum', 'Umum', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20'),
+(6, 'mhs', 'Mahasiswa', NULL, '2020-09-12 00:41:20', '2020-09-12 00:41:20');
+
 -- --------------------------------------------------------
 
 --
@@ -191,6 +250,18 @@ CREATE TABLE `role_user` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role_user`
+--
+
+INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6);
 
 -- --------------------------------------------------------
 
@@ -205,11 +276,24 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nim` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prodi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `telepon` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `ps_id`, `email`, `name`, `nim`, `prodi`, `telepon`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 1, 'admin@mail.com', 'Halimah T', 'kjsdfkj', 'Mahasiswa', '87498', '$2y$10$Svh4Re9GN2dFXrxBER3rNeNeg5sTh6OU6PXrkdAJKdNbRkLXQZYhG', 'q2Z8Slrrg1AX3Bsya4Dnp9mNFkt8q5yxIfaZSDuC5iRyKLIEbcgbcwZkCaig', '2020-09-12 00:29:39', '2020-09-12 01:01:41'),
+(2, 1, 'dekan@mail.com', 'Dekan', '21334325', 'xfgh', '546457', '$2y$10$ZQa/8suY8jnGJEQ4UXGT9usEg3fVgMNOvczyyTcFV8rzNmic7ihxa', 'l0KiKvI5V84SezpEGAxHzGeEZgK0JhxTfnF46YRCR4pZlgvAuQ5k0NV9pyId', '2020-09-12 00:50:37', '2020-09-12 01:01:20'),
+(3, 2, 'wd2@mail.com', 'Wakil Dekan 2 T', '3453434', 'sgsg', '25235', '$2y$10$ZQa/8suY8jnGJEQ4UXGT9usEg3fVgMNOvczyyTcFV8rzNmic7ihxa', '97YxrPZAaP85EvmuACHTBMJGKt3qEwnl2p06vVDlhVaZG4Y54VHpuh7pwip4', '2020-09-12 00:50:37', '2020-09-12 01:01:51'),
+(4, 4, 'wd3@mail.com', 'Wakil Dekan 3', '4657', 'sgfdhgh', '4345747', '$2y$10$ZQa/8suY8jnGJEQ4UXGT9usEg3fVgMNOvczyyTcFV8rzNmic7ihxa', 'jhKWJ3GfqdJ2x6XXz0P4VxlEiRNvOjW3TZLfFGLxdia4ykCaorfpi9Mhfwfl', '2020-09-12 00:50:37', '2020-09-12 00:50:37'),
+(5, 9, 'umum@mail.com', 'Umum', '3656', 'dfyjgdj', '346346', '$2y$10$ZQa/8suY8jnGJEQ4UXGT9usEg3fVgMNOvczyyTcFV8rzNmic7ihxa', 'mxvOlPfaNWMtwubh6V8RnlnW29m12VrEhRgek8iS29hJZwpNHy0B9Yl84vaW', '2020-09-12 00:50:37', '2020-09-12 01:06:16'),
+(6, 9, 'mahasiswa@mail.com', 'Halimah 2', '123456789', 'Mahasiswa', '081234567895', '$2y$10$ZQa/8suY8jnGJEQ4UXGT9usEg3fVgMNOvczyyTcFV8rzNmic7ihxa', 'pPak12qIJT9KF0RxdndHOMDCjWN17qBjXwdJrfC3iirhuGlcuHAXMm5dL14Q', '2020-09-12 00:32:01', '2020-09-12 01:06:09');
 
 --
 -- Indexes for dumped tables
@@ -309,37 +393,37 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pagu`
 --
 ALTER TABLE `pagu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `proposal`
 --
 ALTER TABLE `proposal`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

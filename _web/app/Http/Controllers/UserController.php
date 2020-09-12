@@ -75,9 +75,9 @@ class UserController extends Controller
         $user->update($input);
 
         if ($user->id < 6) {
-            return redirect()->route('staff_list')->with('sukses', 'Data ' .$user->prodi.' berhasil diperbaharui.');
+            return redirect()->route('staff_list')->with('sukses', 'Data berhasil diperbaharui.');
         }else{
-            return redirect()->route('mahasiswa_list')->with('sukses', 'Data ' .$user->name.' berhasil diperbaharui.');
+            return redirect()->route('mahasiswa_list')->with('sukses', 'Data berhasil diperbaharui.');
         }
         
     }
@@ -89,7 +89,7 @@ class UserController extends Controller
 
         $user->delete();
 
-        return redirect()->route('mahasiswa_list')->with('sukses', 'Data ' .$nama. ' berhasil dihapus.');
+        return redirect()->route('mahasiswa_list')->with('sukses', 'Data berhasil dihapus.');
     }
     
 }
